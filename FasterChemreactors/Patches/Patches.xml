@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patch>
+    <!-- Change the VCHE defs if its installed -->
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Vanilla Chemfuel Expanded</li> 
+        </mods>
+        <match Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="InfiniteChemreactor"]/comps/li[@Class="PipeSystem.CompProperties_SpawnerOrNet"]/spawnCount</xpath>
+                <value>
+                    <spawnCount>5</spawnCount>
+                </value>
+            </li>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="InfiniteChemreactor"]/comps/li[@Class="PipeSystem.CompProperties_SpawnerOrNet"]/spawnIntervalRange</xpath>
+                <value>
+                    <spawnIntervalRange><min>40000</min><max>40000</max></spawnIntervalRange>
+                </value>
+            </li>
+        </operations>
+        </match>
+        <!-- Change the vanilla defs if no VCHE found -->
+        <nomatch Class="PatchOperationSequence">
+        <operations>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnCount</xpath>
+                <value>
+                    <!-- Reduce yield -->
+                    <spawnCount>5</spawnCount>
+                </value>
+            </li>
+
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="InfiniteChemreactor"]/comps/li[@Class="CompProperties_Spawner"]/spawnIntervalRange</xpath>
+                <value>
+                    <!-- Increase speed -->
+                    <spawnIntervalRange><min>40000</min><max>40000</max></spawnIntervalRange>
+                </value>
+            </li>
+        </operations>
+        </nomatch>
+    </Operation>
+</Patch>
