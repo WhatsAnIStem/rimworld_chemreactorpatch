@@ -7,6 +7,7 @@
     <supportedVersions> <!-- List the RimWorld versions this mod is compatible with -->
         <li>1.5</li>
         <li>1.6</li>
+        <li>1.7</li>
     </supportedVersions>
     <url>https://github.com/WhatsAnIStem/rimworld_chemreactorpatch</url> 
     <loadAfter> 
